@@ -4,12 +4,6 @@ import Trip from "./models/trip";
 import { TripType } from "./models/trip-type";
 import User from "./models/user";
 
-// Future improvements
-// - Big decimal library will be necessary for currency math for production-use
-// - magswipe card scanner reader providing keyboard input to program
-// - a local storage option to encrypt and store transactions from a trip during offline mode
-// - a protocol such as HTTP to send data from local storage to web server
-
 const card = new Card(30);
 const user = new User(card)
 

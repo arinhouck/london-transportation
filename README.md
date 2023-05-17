@@ -19,7 +19,7 @@ npm start:dev
 ## Run tests
 
 ```
-npm tests
+npm test
 ```
 
 ## Improvements
