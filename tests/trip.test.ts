@@ -23,7 +23,7 @@ describe('Trip', () => {
         });
     })
     describe('checkOut()', () => {
-        test('as rail', () => {
+        test('as rail partial amount', () => {
             const card = new Card(5);
             const trip = new Trip(card, TripType.RAIL, Station.chelsea);
 
@@ -31,6 +31,16 @@ describe('Trip', () => {
             trip.checkOut(Station.holburn);
 
             expect(card.getBalance()).toBe(2.5)
+        });
+
+        test('as rail full amount', () => {
+            const card = new Card(3.2);
+            const trip = new Trip(card, TripType.RAIL, Station.chelsea);
+
+            trip.checkIn();
+            trip.checkOut(Station.wimbledon);
+
+            expect(card.getBalance()).toBe(0)
         });
     })
 });
